@@ -21,4 +21,4 @@ jobs:
           distribution: 'temurin'
 
       - name: Build with Maven
-        run: maven clean install
+        run: mvn clean install
