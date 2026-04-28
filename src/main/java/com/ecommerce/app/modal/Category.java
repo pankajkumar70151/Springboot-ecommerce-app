@@ -1,14 +1,13 @@
 package com.ecommerce.app.modal;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity(name="categories")
 @Data
@@ -21,6 +20,9 @@ public class Category {
     private Long categoryId;
 
     @NotBlank
-    @Size(min = 5, message = "Category name should more than 5 letter")
+    @Size(min = 3, message = "Category name should more than 3 letter")
     private String categoryName;
+
+    @OneToMany(mappedBy = "category" , cascade = CascadeType.ALL)
+    private List<Product> product;
 }

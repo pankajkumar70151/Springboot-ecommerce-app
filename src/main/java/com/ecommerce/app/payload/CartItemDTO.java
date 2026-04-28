@@ -7,9 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class    CategoryDTO {
+public class CartItemDTO {
 
-    private Long categoryId;
-    private String categoryName;
+    private Long productId;
+    private Integer quantity;
 
 }

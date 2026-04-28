@@ -30,7 +30,7 @@ public class CategoryServiceImpl implements CategoryService{
     @Override
     public CategoryResponse getAllCategories(Integer pageNumber,Integer pageSize, String sortBy, String orderBy) {
 
-        Sort pageSortAndOrderBy = orderBy.equals("asc") ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
+        Sort pageSortAndOrderBy = orderBy.equalsIgnoreCase("asc") ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
         Pageable pageDetails = PageRequest.of(pageNumber, pageSize, pageSortAndOrderBy);
         Page<Category> categoryPage = categoryRepository.findAll(pageDetails);
         List<Category> categories = categoryPage.getContent();

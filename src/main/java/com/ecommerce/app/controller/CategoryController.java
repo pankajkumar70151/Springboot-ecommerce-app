@@ -1,7 +1,6 @@
 package com.ecommerce.app.controller;
 
 import com.ecommerce.app.config.AppConstants;
-import com.ecommerce.app.modal.Category;
 import com.ecommerce.app.payload.CategoryDTO;
 import com.ecommerce.app.payload.CategoryResponse;
 import com.ecommerce.app.service.CategoryService;
@@ -22,7 +21,7 @@ public class CategoryController {
     public ResponseEntity<CategoryResponse> getAllCategory(
             @RequestParam(name = "pageNumber", defaultValue = AppConstants.PAGE_NUMBER, required = false) Integer pageNumber,
             @RequestParam(name = "pageSize", defaultValue = AppConstants.PAGE_SIZE, required = false) Integer pageSize,
-            @RequestParam(name = "sortBy", defaultValue = AppConstants.SORT_BY, required = false) String sortBy,
+            @RequestParam(name = "sortBy", defaultValue = AppConstants.SORT_CATEGORIES_BY, required = false) String sortBy,
             @RequestParam(name = "orderBy", defaultValue = AppConstants.ORDER_BY, required = false) String orderBy
             )
     {
